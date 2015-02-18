@@ -13,4 +13,3 @@ COPY . /usr/src/mkimage
 WORKDIR /usr/src/mkimage
 
 CMD ./build.sh
-
