@@ -15,13 +15,12 @@ for suite in $SUITES; do
 	rm -rf $dir
 
 	docker run --rm $REPO:$suite bash -c 'dpkg-query -l' > $suite
-	cp $suite $suite_$date
-
+	
 	# Upload to S3 (using AWS CLI)
 	printf "$ACCESS_KEY\n$SECRET_KEY\n$REGION_NAME\n\n" | aws configure
 	aws s3 cp $suite s3://$BUCKET_NAME/image_info/i386-debian/$suite/
-	aws s3 cp $suite_$date s3://$BUCKET_NAME/image_info/i386-debian/$suite/
-	rm -f $suite $suite_$date
+	aws s3 cp $suite s3://$BUCKET_NAME/image_info/i386-debian/$suite/$suite_$date
+	rm -f $suite
 	
 	docker tag -f $REPO:$suite $REPO:$suite-$date
 	if [ $LATEST == $suite ]; then

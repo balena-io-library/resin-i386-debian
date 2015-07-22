@@ -8,7 +8,8 @@ RUN apt-get -q update \
 		docker.io \
 		debootstrap \
 		python \
-		python-pip
+		python-pip \
+	&& rm -rf /var/lib/apt/lists/*
 
 RUN pip install awscli
 
