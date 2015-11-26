@@ -15,6 +15,6 @@ resin/i386-debian is built weekly from this repository. For more details about a
 If you're having any problem, please [raise an issue][issue-tracker] on GitHub.
 
 [i386-dockerhub-link]:https://registry.hub.docker.com/u/resin/i386-debian/
-[resin-base-images]:http://docs.resin.io/#/pages/configuration/resin-base-images.md
+[resin-base-images]:http://docs.resin.io/#/pages/runtime/resin-base-images.md
 [source-code]:https://github.com/resin-io-library/resin-i386-debian
 [issue-tracker]:https://github.com/resin-io-library/resin-i386-debian/issues

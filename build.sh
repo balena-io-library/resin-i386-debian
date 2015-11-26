@@ -9,7 +9,7 @@ LATEST='jessie'
 
 for suite in $SUITES; do
 	dir=$(mktemp --tmpdir=/var/tmp -d)
-	date=$(date +'%F')
+	date=$(date +'%Y%m%d' -u)
 	
 	./mkimage.sh -t $REPO:$suite --dir=$dir debootstrap --variant=minbase --arch=i386 --include=sudo $suite $MIRROR
 	rm -rf $dir
